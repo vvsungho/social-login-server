@@ -1,0 +1,38 @@
+spring:
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+
+  config:
+    location: currentdir/config
+  pid:
+    file: application.pid
+
+  jpa:
+    properties:
+      hibernate:
+        physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        enable_lazy_load_no_trans: true
+
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    tomcat:
+      max-active: 50
+      max-idle: 50
+      min-idle: 10
+      max-wait: -1
+      initial-size: 10
+      test-on-borrow: true
+      test-while-idle: true
+      validation-query: 'select 1'
+      time-between-eviction-runs-millis: 3000
+  mvc:
+    custom-uri-logging-filter:
+      enabled: true
+      level: info
+
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
