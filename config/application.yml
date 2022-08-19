@@ -16,6 +16,14 @@ spring:
         format_sql: true
         show_sql: true
 
+social:
+  client:
+    kakao:
+      rest-api-key:
+      secret-key: 
+      redirect-uri: http://127.0.0.1:8080/kakao-login
+      grant_type: authorization_code
+
 logging:
   level:
     org:
