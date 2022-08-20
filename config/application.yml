@@ -1,3 +1,6 @@
+server:
+  port: 17000
+
 spring:
   profiles:
     active: local
@@ -7,8 +10,6 @@ spring:
     password:
     sql-script-encoding: UTF-8
   jpa:
-    #    show-sql: true
-    #    generate-ddl: true
     hibernate:
       ddl-auto: update
     properties:
@@ -20,7 +21,7 @@ social:
   client:
     kakao:
       rest-api-key:
-      secret-key: 
+      secret-key:
       redirect-uri: http://127.0.0.1:8080/kakao-login
       grant_type: authorization_code
 
