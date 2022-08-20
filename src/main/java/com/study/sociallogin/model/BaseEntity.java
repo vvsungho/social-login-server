@@ -10,7 +10,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
-@Builder
 @MappedSuperclass
 @AllArgsConstructor
 @NoArgsConstructor
