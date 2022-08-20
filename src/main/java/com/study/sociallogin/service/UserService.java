@@ -40,9 +40,6 @@ public class UserService {
 
         return LoginResponse.builder()
                 .id(user.getId())
-                .userId(user.getUserId())
-                .userName(user.getUserName())
-                .userEmail(user.getUserEmail())
                 .build();
     }
 
@@ -69,5 +66,17 @@ public class UserService {
             }
         }
         return new LoginServiceImpl();
+    }
+
+    public UserResponse getUser(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("ERROR_001", "유저 정보를 찾을 수 없습니다."));
+
+        return UserResponse.builder()
+                .id(user.getId())
+                .userId(user.getUserId())
+                .userEmail(user.getUserEmail())
+                .userName(user.getUserName())
+                .build();
     }
 }
