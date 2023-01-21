@@ -23,6 +23,7 @@ public class UserService {
         SocialAuthResponse socialAuthResponse = loginService.getAccessToken(request.getCode());
 
         SocialUserResponse socialUserResponse = loginService.getUserInfo(socialAuthResponse.getAccess_token());
+        log.info("socialUserResponse {} ", socialUserResponse.toString());
 
         if (userRepository.findByUserId(socialUserResponse.getId()).isEmpty()) {
             this.joinUser(

@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:log4jdbc:mysql://127.0.0.1:3306/mini-test?useSSL=false&autoReconnect=true&autoReconnection=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Seoul
     username: root
-    password:
+    password: dbstjdgh422
     sql-script-encoding: UTF-8
   jpa:
     hibernate:
@@ -23,6 +23,12 @@ social:
       rest-api-key:
       secret-key:
       redirect-uri: http://127.0.0.1:8080/kakao-login
+      grant_type: authorization_code
+
+    naver:
+      rest-api-key:
+      secret-key:
+      redirect-uri: http://localhost:8080/naver-login
       grant_type: authorization_code
 
 logging:
