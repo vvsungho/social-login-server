@@ -31,6 +31,12 @@ social:
       redirect-uri: http://localhost:8080/naver-login
       grant_type: authorization_code
 
+    google:
+      rest-api-key:
+      secret-key:
+      redirect-uri: http://localhost:8080/google-login
+      grant_type: authorization_code
+
 logging:
   level:
     org:
